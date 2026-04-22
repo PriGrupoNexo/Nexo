@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Nexo — Excelência não é barulho. É condução.</title>
+<meta name="description" content="Há 18 anos entregamos tranquilidade para quem decide. Parceiro executivo em eventos corporativos, treinamento e comunicação integrada. Brasil & USA.">
+<meta property="og:title" content="Grupo Nexo — Excelência não é barulho. É condução.">
+<meta property="og:description" content="Parceiro executivo em eventos corporativos, treinamento e comunicação. Stress Free por método, não por sorte.">
+<meta property="og:type" content="website">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --bg: #080807;
+  --bg2: #111110;
+  --bg3: #1A1A18;
+  --white: #F2EDE6;
+  --white60: rgba(242,237,230,0.6);
+  --white35: rgba(242,237,230,0.35);
+  --gold: #C4A97D;
+  --gold-light: #D4BC98;
+  --gold-dark: #8A7254;
+  --line: rgba(196,169,125,0.18);
+  --line2: rgba(196,169,125,0.08);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--gold); color: var(--bg); }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════ */
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+}
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.lead {
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.65;
+  color: var(--white60);
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   GOOGLE FONTS FALLBACK (loads async)
+═══════════════════════════════════════════ */
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════════════
+   LAYOUT UTILITIES
+═══════════════════════════════════════════ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media(max-width:768px) { .container { padding: 0 24px; } }
+
+.section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--line);
+}
+@media(max-width:768px) { .section { padding: 80px 0; } }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.section-header .kicker::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-left: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   LANGUAGE TOGGLE
+═══════════════════════════════════════════ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 4px;
+}
+.lang-btn {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 5px 12px;
+  border: none;
+  background: none;
+  color: var(--white35);
+  cursor: pointer;
+  border-radius: 1px;
+  transition: all 0.2s var(--ease);
+}
+.lang-btn.active {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(8,8,7,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+  transition: padding 0.3s var(--ease);
+}
+nav.scrolled { padding: 14px 48px; }
+@media(max-width:768px) { nav { padding: 16px 24px; } }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo-mark {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo-mark svg { width: 18px; height: 18px; }
+.nav-logo-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+.nav-logo-tagline {
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+@media(max-width:900px) { .nav-links { display: none; } }
+.nav-links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white60);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.25s var(--ease);
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-cta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.nav-cta:hover { background: var(--gold); color: var(--bg); }
+
+/* Mobile menu button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+@media(max-width:900px) { .nav-hamburger { display: flex; } }
+.nav-hamburger span {
+  display: block; width: 24px; height: 1px;
+  background: var(--white60);
+  transition: all 0.25s;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 800;
+  background: var(--bg);
+  padding: 100px 24px 48px;
+  flex-direction: column;
+  gap: 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--white60);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--white); }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 80px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line2) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.hero-bg-radial {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 65% 40%, rgba(196,169,125,0.07) 0%, transparent 65%);
+}
+.hero-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, var(--bg) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 48px;
+}
+@media(max-width:768px) { .hero-content { padding: 0 24px; } }
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-h1 {
+  font-size: clamp(52px, 7.5vw, 108px);
+  max-width: 1000px;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--white60);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 56px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+.btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white60);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--white35);
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+.btn-ghost:hover { color: var(--white); border-color: var(--white60); }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-right: none;
+  border-left: none;
+}
+@media(max-width:768px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+.hero-stat {
+  background: var(--bg);
+  padding: 28px 32px;
+}
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-num em { font-style: italic; color: var(--gold); }
+.hero-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--white35);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════ */
+.marquee-wrap {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  background: var(--bg2);
+}
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+.marquee-item {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white35);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.marquee-item::after {
+  content: '◆';
+  font-size: 8px;
+  color: var(--gold);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT / MANIFESTO
+═══════════════════════════════════════════ */
+#about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+@media(max-width:900px) { #about .about-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+#about h2 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  margin-bottom: 32px;
+}
+#about h2 em { font-style: italic; color: var(--gold); }
+
+.manifesto-text {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--white60);
+  margin-bottom: 24px;
+}
+.manifesto-text strong { color: var(--white); font-weight: 400; }
+
+.about-aside {
+  padding-top: 16px;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.timeline-item:first-child { border-top: 1px solid var(--line); }
+.timeline-year {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold);
+  font-style: italic;
+  padding-top: 2px;
+}
+.timeline-content h4 {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.timeline-content p {
+  font-size: 13px;
+  color: var(--white35);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   FOUNDERS
+═══════════════════════════════════════════ */
+#founders {
+  background: var(--bg2);
+}
+#founders .founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 0;
+}
+@media(max-width:768px) { #founders .founders-grid { grid-template-columns: 1fr; } }
+
+.founder-card {
+  background: var(--bg2);
+  padding: 56px 48px;
+}
+@media(max-width:768px) { .founder-card { padding: 40px 24px; } }
+
+.founder-avatar {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--gold);
+  font-style: italic;
+}
+.founder-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+.founder-role {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.founder-bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--white60);
+  margin-bottom: 32px;
+}
+.founder-bio strong { color: var(--white); font-weight: 400; }
+.founder-links {
+  display: flex;
+  gap: 16px;
+}
+.founder-link {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white35);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+.founder-link:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   MÉTODO / STRESS FREE
+═══════════════════════════════════════════ */
+#method .method-intro {
+  max-width: 700px;
+  margin-bottom: 80px;
+}
+#method h2 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  margin-bottom: 28px;
+}
+#method h2 em { font-style: italic; color: var(--gold); }
+
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 80px;
+}
+@media(max-width:900px) { .method-steps { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px) { .method-steps { grid-template-columns: 1fr; } }
+
+.method-step {
+  background: var(--bg);
+  padding: 36px 28px;
+  position: relative;
+  transition: background 0.25s;
+}
+.method-step:hover { background: var(--bg2); }
+.method-step-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: rgba(196,169,125,0.12);
+  line-height: 1;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.method-step h4 {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.method-step p {
+  font-size: 13px;
+  color: var(--white35);
+  line-height: 1.55;
+}
+
+.method-principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media(max-width:768px) { .method-principles { grid-template-columns: 1fr; } }
+.principle {
+  background: var(--bg);
+  padding: 48px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+@media(max-width:768px) { .principle { padding: 32px 24px; } }
+.principle-icon {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--gold);
+  font-style: italic;
+  flex-shrink: 0;
+  margin-top: -4px;
+}
+.principle h4 {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+.principle p {
+  font-size: 14px;
+  color: var(--white60);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   ECOSSISTEMA
+═══════════════════════════════════════════ */
+#ecosystem {
+  background: var(--bg2);
+}
+#ecosystem h2 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  margin-bottom: 16px;
+}
+#ecosystem h2 em { font-style: italic; color: var(--gold); }
+.ecosystem-sub {
+  font-size: 17px;
+  color: var(--white60);
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media(max-width:900px) { .eco-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px) { .eco-grid { grid-template-columns: 1fr; } }
+
+.eco-card {
+  background: var(--bg2);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.eco-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease);
+}
+.eco-card:hover { background: var(--bg3); }
+.eco-card:hover::before { transform: scaleX(1); }
+
+.eco-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+}
+.eco-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.eco-card p {
+  font-size: 14px;
+  color: var(--white60);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  flex: 1;
+}
+.eco-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.eco-tag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  color: var(--white35);
+  border-radius: 1px;
+}
+
+/* ═══════════════════════════════════════════
+   CASOS (PORTFOLIO)
+═══════════════════════════════════════════ */
+#cases h2 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  margin-bottom: 16px;
+}
+#cases h2 em { font-style: italic; color: var(--gold); }
+.cases-sub {
+  font-size: 17px;
+  color: var(--white60);
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+
+.cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.case-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.case-item:last-child { border-bottom: none; }
+.case-item:hover { background: var(--bg2); }
+@media(max-width:768px) { .case-item { grid-template-columns: 1fr; } }
+
+.case-index {
+  padding: 36px 28px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+}
+@media(max-width:768px) { .case-index { border-right: none; border-bottom: 1px solid var(--line); padding: 24px; } }
+.case-index-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.case-body { padding: 36px 40px; }
+@media(max-width:768px) { .case-body { padding: 24px; } }
+
+.case-client {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.case-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.case-desc {
+  font-size: 14px;
+  color: var(--white60);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+.case-impact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.case-impact::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.case-meta {
+  padding: 36px 32px;
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-width: 160px;
+}
+@media(max-width:768px) { .case-meta { border-left: none; border-top: 1px solid var(--line); flex-direction: row; flex-wrap: wrap; justify-content: flex-start; padding: 20px 24px; } }
+.case-badge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  color: var(--white35);
+}
+
+/* ═══════════════════════════════════════════
+   CLIENTES
+═══════════════════════════════════════════ */
+#clients {
+  background: var(--bg2);
+}
+#clients h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  margin-bottom: 12px;
+}
+#clients h2 em { font-style: italic; color: var(--gold); }
+.clients-sub {
+  font-size: 16px;
+  color: var(--white60);
+  max-width: 560px;
+  margin-bottom: 56px;
+}
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 80px;
+}
+@media(max-width:900px) { .clients-grid { grid-template-columns: repeat(3, 1fr); } }
+@media(max-width:500px) { .clients-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.client-cell {
+  background: var(--bg2);
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.client-cell:hover { background: var(--bg3); }
+.client-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white35);
+  text-align: center;
+  transition: color 0.2s;
+}
+.client-cell:hover .client-name { color: var(--white60); }
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media(max-width:768px) { .testimonials { grid-template-columns: 1fr; } }
+.testimonial {
+  background: var(--bg2);
+  padding: 48px;
+}
+@media(max-width:768px) { .testimonial { padding: 32px 24px; } }
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+.testimonial-quote::before {
+  content: '"';
+  font-size: 64px;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.testimonial-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gold);
+  font-style: italic;
+  flex-shrink: 0;
+}
+.testimonial-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+.testimonial-role {
+  font-size: 11px;
+  color: var(--white35);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════
+   CONTEÚDO / PONTO DE VISTA
+═══════════════════════════════════════════ */
+#content h2 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  margin-bottom: 16px;
+}
+#content h2 em { font-style: italic; color: var(--gold); }
+.content-sub {
+  font-size: 17px;
+  color: var(--white60);
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media(max-width:900px) { .articles-grid { grid-template-columns: 1fr; } }
+
+.article-card {
+  background: var(--bg);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.article-card:hover { background: var(--bg2); }
+.article-card.featured { min-height: 400px; }
+
+.article-tag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.article-card.featured .article-title { font-size: clamp(24px, 3.5vw, 36px); }
+.article-excerpt {
+  font-size: 14px;
+  color: var(--white60);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 28px;
+}
+.article-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.article-author {
+  font-size: 11px;
+  color: var(--white35);
+  font-weight: 500;
+}
+.article-arrow {
+  font-size: 18px;
+  color: var(--gold);
+  transition: transform 0.2s;
+}
+.article-card:hover .article-arrow { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════
+   CONTATO
+═══════════════════════════════════════════ */
+#contact {
+  background: var(--bg2);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+@media(max-width:900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+#contact h2 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  margin-bottom: 24px;
+}
+#contact h2 em { font-style: italic; color: var(--gold); }
+.contact-promise {
+  font-size: 15px;
+  color: var(--white60);
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+.contact-promise strong { color: var(--white); font-weight: 400; }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.contact-info-item:last-child { border-bottom: none; }
+.contact-info-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.contact-info-value {
+  font-size: 16px;
+  color: var(--white60);
+}
+.contact-info-value a { transition: color 0.2s; }
+.contact-info-value a:hover { color: var(--white); }
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-group label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 300;
+  padding: 14px 16px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--white35); }
+.form-group select option { background: var(--bg2); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media(max-width:500px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.form-note {
+  font-size: 12px;
+  color: var(--white35);
+}
+
+.form-success {
+  display: none;
+  padding: 24px;
+  border: 1px solid var(--gold);
+  background: rgba(196,169,125,0.05);
+  font-size: 14px;
+  color: var(--white60);
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 60px 48px 40px;
+}
+@media(max-width:768px) { footer { padding: 48px 24px 32px; } }
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+@media(max-width:900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media(max-width:500px) { .footer-top { grid-template-columns: 1fr; gap: 32px; } }
+
+.footer-brand .footer-logo-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.footer-brand .footer-tagline {
+  font-size: 13px;
+  color: var(--white35);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-social a {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white35);
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  transition: all 0.2s;
+}
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+
+.footer-col h4 {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 14px;
+  color: var(--white35);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white60); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.footer-copy {
+  font-size: 12px;
+  color: var(--white35);
+}
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-bottom-links a {
+  font-size: 11px;
+  color: var(--white35);
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.footer-bottom-links a:hover { color: var(--white60); }
+
+/* ═══════════════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════
+   HIDDEN (lang)
+═══════════════════════════════════════════ */
+[data-lang="en"] { display: none; }
+body.lang-en [data-lang="en"] { display: block; }
+body.lang-en [data-lang="pt"] { display: none; }
+/* For inline elements */
+span[data-lang="en"] { display: none; }
+body.lang-en span[data-lang="en"] { display: inline; }
+body.lang-en span[data-lang="pt"] { display: none; }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE MENU
+═══════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()" data-lang="pt">Nossa História</a>
+  <a href="#about" onclick="closeMobile()" data-lang="en">Our Story</a>
+  <a href="#method" onclick="closeMobile()" data-lang="pt">O Método</a>
+  <a href="#method" onclick="closeMobile()" data-lang="en">The Method</a>
+  <a href="#ecosystem" onclick="closeMobile()" data-lang="pt">Ecossistema</a>
+  <a href="#ecosystem" onclick="closeMobile()" data-lang="en">Ecosystem</a>
+  <a href="#cases" onclick="closeMobile()" data-lang="pt">Casos</a>
+  <a href="#cases" onclick="closeMobile()" data-lang="en">Cases</a>
+  <a href="#content" onclick="closeMobile()" data-lang="pt">Ponto de Vista</a>
+  <a href="#content" onclick="closeMobile()" data-lang="en">Insights</a>
+  <a href="#contact" onclick="closeMobile()" data-lang="pt">Contato</a>
+  <a href="#contact" onclick="closeMobile()" data-lang="en">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 1L17 9L9 17L1 9L9 1Z" stroke="#C4A97D" stroke-width="1"/>
+        <circle cx="9" cy="9" r="2.5" fill="#C4A97D"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-logo-name">Grupo Nexo</div>
+      <div class="nav-logo-tagline" data-lang="pt">Parceiro Executivo</div>
+      <div class="nav-logo-tagline" data-lang="en">Executive Partner</div>
+    </div>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#about" data-lang="pt">Nossa História</a><a href="#about" data-lang="en">Our Story</a></li>
+    <li><a href="#method" data-lang="pt">O Método</a><a href="#method" data-lang="en">The Method</a></li>
+    <li><a href="#ecosystem" data-lang="pt">Ecossistema</a><a href="#ecosystem" data-lang="en">Ecosystem</a></li>
+    <li><a href="#cases" data-lang="pt">Casos</a><a href="#cases" data-lang="en">Cases</a></li>
+    <li><a href="#content" data-lang="pt">Ponto de Vista</a><a href="#content" data-lang="en">Insights</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnPT" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#contact" class="nav-cta" data-lang="pt">Conversar</a>
+    <a href="#contact" class="nav-cta" data-lang="en">Talk to us</a>
+    <div class="nav-hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-radial"></div>
+    <div class="hero-bg-vignette"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-kicker kicker" data-lang="pt">Parceiro Executivo · Brasil & USA · 18 anos</div>
+    <div class="hero-kicker kicker" data-lang="en">Executive Partner · Brazil & USA · 18 years</div>
+
+    <h1 class="hero-h1" data-lang="pt">
+      Excelência não<br>é barulho.<br><em>É condução.</em>
+    </h1>
+    <h1 class="hero-h1" data-lang="en">
+      Excellence isn't<br>noise.<br><em>It's execution.</em>
+    </h1>
+
+    <p class="hero-sub" data-lang="pt">
+      Há 18 anos entregamos tranquilidade para quem decide. Somos o parceiro que você contrata para dormir em paz — sabendo que, quando abrir a plenária com mil pessoas, nada vai dar errado.
+    </p>
+    <p class="hero-sub" data-lang="en">
+      For 18 years we've delivered peace of mind to decision-makers. We are the partner you hire to sleep soundly — knowing that when the doors open for a thousand people, nothing will go wrong.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#method" class="btn-primary" data-lang="pt">Conheça o Método Stress Free →</a>
+      <a href="#method" class="btn-primary" data-lang="en">Discover the Stress Free Method →</a>
+      <a href="#cases" class="btn-ghost" data-lang="pt">Ver Casos de Impacto</a>
+      <a href="#cases" class="btn-ghost" data-lang="en">See Impact Cases</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num"><em>18</em></div>
+      <div class="hero-stat-label" data-lang="pt">Anos de Estrada</div>
+      <div class="hero-stat-label" data-lang="en">Years of Experience</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">+<em>70</em></div>
+      <div class="hero-stat-label" data-lang="pt">Clientes Atendidos</div>
+      <div class="hero-stat-label" data-lang="en">Clients Served</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><em>2</em></div>
+      <div class="hero-stat-label" data-lang="pt">Continentes de Operação</div>
+      <div class="hero-stat-label" data-lang="en">Continents of Operation</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><em>5</em></div>
+      <div class="hero-stat-label" data-lang="pt">Capacidades Integradas</div>
+      <div class="hero-stat-label" data-lang="en">Integrated Capabilities</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item" data-lang="pt">Stress Free por método, não por sorte</span>
+    <span class="marquee-item" data-lang="pt">Menos follow. Mais update.</span>
+    <span class="marquee-item" data-lang="pt">Você foca na estratégia. A gente cuida do resto.</span>
+    <span class="marquee-item" data-lang="pt">Executivo por natureza. Criativo por essência.</span>
+    <span class="marquee-item" data-lang="pt">Evento não é fim. É plataforma.</span>
+    <span class="marquee-item" data-lang="pt">Brasil & USA · Parceiro Global</span>
+    <span class="marquee-item" data-lang="pt">Stress Free por método, não por sorte</span>
+    <span class="marquee-item" data-lang="pt">Menos follow. Mais update.</span>
+    <span class="marquee-item" data-lang="pt">Você foca na estratégia. A gente cuida do resto.</span>
+    <span class="marquee-item" data-lang="pt">Executivo por natureza. Criativo por essência.</span>
+    <span class="marquee-item" data-lang="pt">Evento não é fim. É plataforma.</span>
+    <span class="marquee-item" data-lang="pt">Brasil & USA · Parceiro Global</span>
+
+    <span class="marquee-item" data-lang="en">Stress Free by method, not by luck</span>
+    <span class="marquee-item" data-lang="en">Less follow-up. More updates.</span>
+    <span class="marquee-item" data-lang="en">You focus on strategy. We handle the rest.</span>
+    <span class="marquee-item" data-lang="en">Executive by nature. Creative by essence.</span>
+    <span class="marquee-item" data-lang="en">Events aren't the end. They're the platform.</span>
+    <span class="marquee-item" data-lang="en">Brazil & USA · Global Partner</span>
+    <span class="marquee-item" data-lang="en">Stress Free by method, not by luck</span>
+    <span class="marquee-item" data-lang="en">Less follow-up. More updates.</span>
+    <span class="marquee-item" data-lang="en">You focus on strategy. We handle the rest.</span>
+    <span class="marquee-item" data-lang="en">Executive by nature. Creative by essence.</span>
+    <span class="marquee-item" data-lang="en">Events aren't the end. They're the platform.</span>
+    <span class="marquee-item" data-lang="en">Brazil & USA · Global Partner</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SOBRE / MANIFESTO
+═══════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">Nossa História</span>
+      <span class="kicker" data-lang="en">Our Story</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="reveal">
+        <h2 data-lang="pt">Não nascemos<br>em agência.<br><em>Nascemos dentro</em><br>das empresas.</h2>
+        <h2 data-lang="en">We weren't born<br>in an agency.<br><em>We were born inside</em><br>the companies.</h2>
+
+        <p class="manifesto-text" data-lang="pt">
+          Antes de fundar o Grupo Nexo, Mel e Porcel viveram anos dentro de multinacionais. Eram os executivos do outro lado da mesa — os que contratavam agências, cobravam resultados e sabiam exatamente o que significa ter um evento dar errado na frente de 1.500 pessoas.
+        </p>
+        <p class="manifesto-text" data-lang="pt">
+          Essa experiência muda tudo. Não chegamos para perguntar o que você precisa. <strong>Chegamos sabendo o que você está sentindo.</strong> Conhecemos a pressão, o olhar do CEO na plateia e o custo de cada minuto de improviso.
+        </p>
+        <p class="manifesto-text" data-lang="pt">
+          Há 18 anos construímos um ecossistema que entrega o que nenhuma agência tradicional consegue: <strong>paz mental com execução impecável.</strong> Não porque somos perfeitos — mas porque antecipamos os problemas antes que você precise saber que eles existiram.
+        </p>
+        <p class="manifesto-text" data-lang="pt">
+          Isso é o que chamamos de Stress Free. Não uma promessa. Um método.
+        </p>
+
+        <p class="manifesto-text" data-lang="en">
+          Before founding Grupo Nexo, Mel and Porcel spent years inside multinationals. They were the executives on the other side of the table — the ones who hired agencies, demanded results, and knew exactly what it means when an event goes wrong in front of 1,500 people.
+        </p>
+        <p class="manifesto-text" data-lang="en">
+          That experience changes everything. We don't arrive asking what you need. <strong>We arrive knowing what you're feeling.</strong> We understand the pressure, the CEO's gaze in the audience, and the cost of every minute of improvisation.
+        </p>
+        <p class="manifesto-text" data-lang="en">
+          For 18 years we've built an ecosystem that delivers what no traditional agency can: <strong>peace of mind with flawless execution.</strong> Not because we're perfect — but because we anticipate problems before you need to know they existed.
+        </p>
+        <p class="manifesto-text" data-lang="en">
+          This is what we call Stress Free. Not a promise. A method.
+        </p>
+      </div>
+
+      <div class="about-aside reveal reveal-delay-2">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2006</div>
+            <div class="timeline-content">
+              <h4 data-lang="pt">A Fundação</h4>
+              <h4 data-lang="en">The Foundation</h4>
+              <p data-lang="pt">Ex-executivos de multinacionais fundam a Nexo em São Paulo. A premissa: entregar o que gostariam de ter recebido quando eram clientes.</p>
+              <p data-lang="en">Former multinational executives found Nexo in São Paulo. The premise: deliver what they wished they'd received when they were clients.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2011</div>
+            <div class="timeline-content">
+              <h4 data-lang="pt">O Ecossistema Nasce</h4>
+              <h4 data-lang="en">The Ecosystem is Born</h4>
+              <p data-lang="pt">Expansão para 5 capacidades integradas: branding, eventos, treinamento, operação internacional e logística corporativa.</p>
+              <p data-lang="en">Expansion to 5 integrated capabilities: branding, events, training, international operations, and corporate logistics.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-content">
+              <h4 data-lang="pt">100% Digital-Ready</h4>
+              <h4 data-lang="en">100% Digital-Ready</h4>
+              <p data-lang="pt">Antes da pandemia, já operando online. Quando o mundo fechou, a Nexo estava pronta — plataforma própria de eventos híbridos.</p>
+              <p data-lang="en">Before the pandemic, already operating online. When the world closed, Nexo was ready — proprietary hybrid event platform.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h4 data-lang="pt">Brasil & USA</h4>
+              <h4 data-lang="en">Brazil & USA</h4>
+              <p data-lang="pt">Expansão para Orlando. Operação própria nos EUA, parcerias locais na América Latina. Um ponto de contato para o mundo.</p>
+              <p data-lang="en">Expansion to Orlando. Own operation in the US, local partnerships in Latin America. One point of contact for the world.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Hoje</div>
+            <div class="timeline-content">
+              <h4 data-lang="pt">O Novo Capítulo</h4>
+              <h4 data-lang="en">The New Chapter</h4>
+              <p data-lang="pt">Reposicionamento. Clareza de identidade. A Nexo que sempre foi — agora com a voz que sempre mereceu.</p>
+              <p data-lang="en">Repositioning. Identity clarity. The Nexo that always was — now with the voice it always deserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOUNDERS
+═══════════════════════════════════════════ -->
+<section class="section" id="founders" style="padding: 0; border-bottom: 1px solid var(--line);">
+  <div class="container" style="padding: 0; max-width: 100%;">
+    <div class="founders-grid">
+
+      <div class="founder-card reveal">
+        <div class="founder-avatar">P</div>
+        <div class="founder-name">Fábio Porcel</div>
+        <div class="founder-role" data-lang="pt">CEO · Chief Executive Officer</div>
+        <div class="founder-role" data-lang="en">CEO · Chief Executive Officer</div>
+        <p class="founder-bio" data-lang="pt">
+          Mais de 20 anos de carreira combinando o universo executivo corporativo com a fundação e gestão do Grupo Nexo. <strong>Estrategista por natureza</strong>, Porcel traz a visão de negócio que transforma um evento em plataforma de marca e um treinamento em vantagem competitiva real. Mentor de liderança, ex-participante de reality show de negócios e um dos fundadores do conceito nexalista de ver o todo onde outros enxergam partes.
+        </p>
+        <p class="founder-bio" data-lang="en">
+          Over 20 years of career combining the corporate executive world with founding and managing Grupo Nexo. <strong>A strategist by nature</strong>, Porcel brings the business vision that transforms an event into a brand platform and training into real competitive advantage. Leadership mentor, former business reality show participant, and one of the founders of the nexalist concept of seeing the whole where others see parts.
+        </p>
+        <div class="founder-links">
+          <a href="https://instagram.com/porcel.oficial" class="founder-link" target="_blank">Instagram</a>
+          <a href="https://linkedin.com/in/porceloficial" class="founder-link" target="_blank">LinkedIn</a>
+          <a href="http://porcel.com.br" class="founder-link" target="_blank">Site</a>
+        </div>
+      </div>
+
+      <div class="founder-card reveal reveal-delay-2">
+        <div class="founder-avatar">M</div>
+        <div class="founder-name">Melina Konstadinidis</div>
+        <div class="founder-role" data-lang="pt">CHO · Chief Happiness Officer</div>
+        <div class="founder-role" data-lang="en">CHO · Chief Happiness Officer</div>
+        <p class="founder-bio" data-lang="pt">
+          Marqueteira de formação, estrategista por prática. Mel é a responsável pela alma criativa do Grupo Nexo — a intuição que transforma um briefing em uma experiência memorável. <strong>Especialista em desenvolvimento de liderança e felicidade corporativa</strong>, já treinou C-Levels e presidentes de multinacionais no Brasil, no Japão e nos Estados Unidos. Acredita que a criatividade é o mínimo — o diferencial está em como se entrega.
+        </p>
+        <p class="founder-bio" data-lang="en">
+          Marketer by training, strategist by practice. Mel is responsible for the creative soul of Grupo Nexo — the intuition that transforms a brief into a memorable experience. <strong>Specialist in leadership development and corporate happiness</strong>, she has trained C-Levels and presidents of multinationals in Brazil, Japan, and the United States. She believes creativity is the baseline — the differentiator is how it's delivered.
+        </p>
+        <div class="founder-links">
+          <a href="https://instagram.com/melkonsta.oficial" class="founder-link" target="_blank">Instagram</a>
+          <a href="https://linkedin.com/in/melinakonstadinidis" class="founder-link" target="_blank">LinkedIn</a>
+          <a href="https://melkonsta.com.br" class="founder-link" target="_blank">Site</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MÉTODO
+═══════════════════════════════════════════ -->
+<section class="section" id="method">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">O Método</span>
+      <span class="kicker" data-lang="en">The Method</span>
+    </div>
+
+    <div class="method-intro">
+      <h2 class="reveal" data-lang="pt">O <em>Stress Free</em><br>não é slogan.<br>É sistema.</h2>
+      <h2 class="reveal" data-lang="en">Stress Free<br>isn't a <em>slogan.</em><br>It's a system.</h2>
+      <p class="lead reveal reveal-delay-1" data-lang="pt">Qualquer agência promete tranquilidade. A diferença é que a gente tem um método documentado para entregar isso — do briefing ao feedback pós-evento. Porque paz mental não acontece por acidente. Acontece por design.</p>
+      <p class="lead reveal reveal-delay-1" data-lang="en">Any agency promises peace of mind. The difference is that we have a documented method to deliver it — from briefing to post-event feedback. Because peace of mind doesn't happen by accident. It happens by design.</p>
+    </div>
+
+    <div class="method-steps reveal">
+      <div class="method-step">
+        <div class="method-step-num">01</div>
+        <h4 data-lang="pt">Briefing Estratégico</h4>
+        <h4 data-lang="en">Strategic Briefing</h4>
+        <p data-lang="pt">Não começamos com "quantos pax". Começamos com "qual reputação você quer construir". Mapeamos o contexto de marca antes de propor qualquer solução.</p>
+        <p data-lang="en">We don't start with "how many pax". We start with "what reputation do you want to build". We map the brand context before proposing any solution.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">02</div>
+        <h4 data-lang="pt">Visão Nexalista</h4>
+        <h4 data-lang="en">Nexalist Vision</h4>
+        <p data-lang="pt">Olhamos para o desafio inteiro. Identificamos dores que o cliente ainda não nomeou. Propomos o que vai resolver, não apenas o que foi pedido.</p>
+        <p data-lang="en">We look at the entire challenge. We identify pain points the client hasn't yet named. We propose what will solve it, not just what was asked.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">03</div>
+        <h4 data-lang="pt">PMO & Antecipação</h4>
+        <h4 data-lang="en">PMO & Anticipation</h4>
+        <p data-lang="pt">Gestão de projetos executiva. Antecipamos riscos antes que se tornem problemas. O cliente nunca é surpreendido com o que podíamos ter previsto.</p>
+        <p data-lang="en">Executive project management. We anticipate risks before they become problems. The client is never surprised by what we could have foreseen.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">04</div>
+        <h4 data-lang="pt">Updates, Não Follows</h4>
+        <h4 data-lang="en">Updates, Not Follow-ups</h4>
+        <p data-lang="pt">Nosso compromisso: você nunca precisa perguntar "como está". Relatórios proativos, cadência clara, sem surpresa de última hora.</p>
+        <p data-lang="en">Our commitment: you never need to ask "how is it going". Proactive reports, clear cadence, no last-minute surprises.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">05</div>
+        <h4 data-lang="pt">Feedback Estruturado</h4>
+        <h4 data-lang="en">Structured Feedback</h4>
+        <p data-lang="pt">Reunião formal pós-entrega. Medimos o Stress Free Index de cada projeto. Aprendizados viram melhoria para o próximo. Isso é parceria, não fornecimento.</p>
+        <p data-lang="en">Formal post-delivery meeting. We measure the Stress Free Index for each project. Learnings become improvements for the next one. This is partnership, not supply.</p>
+      </div>
+    </div>
+
+    <div class="method-principles reveal reveal-delay-1">
+      <div class="principle">
+        <div class="principle-icon">"</div>
+        <div>
+          <h4 data-lang="pt">Criatividade é o mínimo</h4>
+          <h4 data-lang="en">Creativity is the baseline</h4>
+          <p data-lang="pt">Contrataram a gente para ser criativos — isso é dado. O diferencial começa depois: na condução executiva, na antecipação de riscos e na capacidade de proteger a reputação de quem decide.</p>
+          <p data-lang="en">They hired us to be creative — that's a given. The differentiator starts after: in executive management, risk anticipation, and the ability to protect the reputation of decision-makers.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">"</div>
+        <div>
+          <h4 data-lang="pt">Evento é meio, não fim</h4>
+          <h4 data-lang="en">Events are means, not ends</h4>
+          <p data-lang="pt">Não entregamos eventos. Entregamos reputação, engajamento, capacitação e posicionamento de marca — usando eventos, treinamentos e comunicação como plataformas para isso.</p>
+          <p data-lang="en">We don't deliver events. We deliver reputation, engagement, training, and brand positioning — using events, training, and communication as platforms to do so.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">"</div>
+        <div>
+          <h4 data-lang="pt">Menos follow, mais update</h4>
+          <h4 data-lang="en">Less follow, more update</h4>
+          <p data-lang="pt">Você não deveria precisar cobrar atualização do seu parceiro. A responsabilidade de comunicar o progresso é nossa. Sempre foi. Sempre será.</p>
+          <p data-lang="en">You shouldn't need to chase updates from your partner. The responsibility to communicate progress is ours. Always has been. Always will be.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">"</div>
+        <div>
+          <h4 data-lang="pt">Um ponto de contato</h4>
+          <h4 data-lang="en">One point of contact</h4>
+          <p data-lang="pt">Cinco capacidades, um interlocutor. Você não gerencia múltiplos fornecedores. Você tem um parceiro que orquestra tudo — com coerência de visão do início ao fim.</p>
+          <p data-lang="en">Five capabilities, one point of contact. You don't manage multiple suppliers. You have one partner who orchestrates everything — with consistent vision from start to finish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ECOSSISTEMA
+═══════════════════════════════════════════ -->
+<section class="section" id="ecosystem">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">O Ecossistema</span>
+      <span class="kicker" data-lang="en">The Ecosystem</span>
+    </div>
+
+    <h2 class="reveal" data-lang="pt">Cinco capacidades.<br><em>Um parceiro.</em></h2>
+    <h2 class="reveal" data-lang="en">Five capabilities.<br><em>One partner.</em></h2>
+    <p class="ecosystem-sub reveal reveal-delay-1" data-lang="pt">Você não precisa saber qual empresa do grupo vai executar cada parte. Você só precisa de um ponto de contato. A gente cuida do resto.</p>
+    <p class="ecosystem-sub reveal reveal-delay-1" data-lang="en">You don't need to know which group company will execute each part. You just need one point of contact. We handle the rest.</p>
+
+    <div class="eco-grid reveal reveal-delay-2">
+      <div class="eco-card">
+        <div class="eco-num">01 · Branding & Comunicação</div>
+        <h3 data-lang="pt">Identidade que Trabalha por Você</h3>
+        <h3 data-lang="en">Identity That Works for You</h3>
+        <p data-lang="pt">Estratégia de marca, identidade visual, comunicação integrada e criação de conteúdo para o ambiente corporativo. Do conceito ao material de convenção, passando por qualquer touchpoint da marca.</p>
+        <p data-lang="en">Brand strategy, visual identity, integrated communication, and content creation for the corporate environment. From concept to convention material, through any brand touchpoint.</p>
+        <div class="eco-tags">
+          <span class="eco-tag">Brand Strategy</span>
+          <span class="eco-tag" data-lang="pt">Identidade Visual</span>
+          <span class="eco-tag" data-lang="en">Visual Identity</span>
+          <span class="eco-tag">KV & Conceito</span>
+          <span class="eco-tag" data-lang="pt">Conteúdo</span>
+          <span class="eco-tag" data-lang="en">Content</span>
+        </div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-num">02 · Eventos Corporativos</div>
+        <h3 data-lang="pt">Do Planejamento à Plenária</h3>
+        <h3 data-lang="en">From Planning to Plenary</h3>
+        <p data-lang="pt">Convenções, lançamentos, congressos, feiras, eventos híbridos e celebrações corporativas. Produção completa com gestão PMO, do briefing à desmontagem. Especialistas no mercado farmacêutico, saúde e consumer goods.</p>
+        <p data-lang="en">Conventions, launches, congresses, trade shows, hybrid events, and corporate celebrations. Full production with PMO management, from briefing to dismantling. Specialists in pharma, health, and consumer goods markets.</p>
+        <div class="eco-tags">
+          <span class="eco-tag" data-lang="pt">Convenções</span>
+          <span class="eco-tag" data-lang="en">Conventions</span>
+          <span class="eco-tag" data-lang="pt">Lançamentos</span>
+          <span class="eco-tag" data-lang="en">Launches</span>
+          <span class="eco-tag">Hybrid Events</span>
+          <span class="eco-tag">PMO</span>
+        </div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-num">03 · Treinamento com Entretenimento</div>
+        <h3 data-lang="pt">Aprendizado que Ninguém Esquece</h3>
+        <h3 data-lang="en">Learning Nobody Forgets</h3>
+        <p data-lang="pt">O único formato que combina a profundidade de um treinamento executivo com a experiência imersiva de um evento de alto padrão. Desenvolvemos programas de liderança, felicidade corporativa e business games para C-Levels e presidentes.</p>
+        <p data-lang="en">The only format that combines the depth of executive training with the immersive experience of a high-standard event. We develop leadership programs, corporate happiness, and business games for C-Levels and presidents.</p>
+        <div class="eco-tags">
+          <span class="eco-tag" data-lang="pt">Liderança</span>
+          <span class="eco-tag" data-lang="en">Leadership</span>
+          <span class="eco-tag">Business Games</span>
+          <span class="eco-tag" data-lang="pt">C-Level</span>
+          <span class="eco-tag" data-lang="en">C-Level</span>
+          <span class="eco-tag">Entotainment</span>
+        </div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-num">04 · Operação Internacional</div>
+        <h3 data-lang="pt">Um Parceiro para o Mundo</h3>
+        <h3 data-lang="en">One Partner for the World</h3>
+        <p data-lang="pt">Operação própria no Brasil e nos EUA (Orlando). Rede de parceiros locais na América Latina. Para empresas que precisam de eventos ou treinamentos internacionais sem a complexidade de gerenciar múltiplos fornecedores em diferentes países.</p>
+        <p data-lang="en">Own operation in Brazil and the US (Orlando). Network of local partners in Latin America. For companies that need international events or training without the complexity of managing multiple suppliers in different countries.</p>
+        <div class="eco-tags">
+          <span class="eco-tag">Brasil · USA</span>
+          <span class="eco-tag">Latin America</span>
+          <span class="eco-tag" data-lang="pt">Operação Global</span>
+          <span class="eco-tag" data-lang="en">Global Operations</span>
+        </div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-num">05 · Logística Corporativa</div>
+        <h3 data-lang="pt">Do Convite ao Check-out</h3>
+        <h3 data-lang="en">From Invitation to Check-out</h3>
+        <p data-lang="pt">Agência de viagens corporativas integrada ao ecossistema. Hospedagem, transfers, gestão de convidados, credenciamento e experiências de destino. Tudo coordenado pelo mesmo parceiro que gerencia o evento.</p>
+        <p data-lang="en">Corporate travel agency integrated into the ecosystem. Accommodation, transfers, guest management, accreditation, and destination experiences. All coordinated by the same partner managing the event.</p>
+        <div class="eco-tags">
+          <span class="eco-tag" data-lang="pt">Viagens</span>
+          <span class="eco-tag" data-lang="en">Travel</span>
+          <span class="eco-tag">DMC</span>
+          <span class="eco-tag" data-lang="pt">Logística</span>
+          <span class="eco-tag" data-lang="en">Logistics</span>
+        </div>
+      </div>
+
+      <div class="eco-card" style="background: var(--bg3); justify-content: center; align-items: center; text-align: center; min-height: 280px;">
+        <div style="max-width: 220px; margin: 0 auto;">
+          <div style="font-family: var(--font-display); font-size: 48px; color: var(--gold); opacity: 0.3; margin-bottom: 16px; font-style: italic;">N</div>
+          <p style="font-size: 14px; color: var(--white35); line-height: 1.6;" data-lang="pt">Não encontrou o que precisa? Temos parceiros para qualquer solução que esteja fora do nosso ecossistema.</p>
+          <p style="font-size: 14px; color: var(--white35); line-height: 1.6;" data-lang="en">Didn't find what you need? We have partners for any solution outside our ecosystem.</p>
+          <a href="#contact" class="btn-ghost" style="margin-top: 24px; font-size: 10px;" data-lang="pt">Falar com a Nexo →</a>
+          <a href="#contact" class="btn-ghost" style="margin-top: 24px; font-size: 10px;" data-lang="en">Talk to Nexo →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CASOS
+═══════════════════════════════════════════ -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">Casos de Impacto</span>
+      <span class="kicker" data-lang="en">Impact Cases</span>
+    </div>
+
+    <h2 class="reveal" data-lang="pt">Como pensamos.<br><em>O que entregamos.</em></h2>
+    <h2 class="reveal" data-lang="en">How we think.<br><em>What we deliver.</em></h2>
+    <p class="cases-sub reveal reveal-delay-1" data-lang="pt">Cada projeto começa com uma pergunta estratégica, não operacional. Aqui estão alguns dos desafios que transformamos em plataformas de impacto real.</p>
+    <p class="cases-sub reveal reveal-delay-1" data-lang="en">Every project begins with a strategic question, not an operational one. Here are some of the challenges we transformed into platforms of real impact.</p>
+
+    <div class="cases-list reveal reveal-delay-2">
+
+      <div class="case-item">
+        <div class="case-index"><span class="case-index-num">01</span></div>
+        <div class="case-body">
+          <div class="case-client">Bayer · Farma & Saúde</div>
+          <div class="case-title" data-lang="pt">Transformar uma convenção médica em plataforma de pertencimento de marca</div>
+          <div class="case-title" data-lang="en">Transforming a medical convention into a brand belonging platform</div>
+          <p class="case-desc" data-lang="pt">A Bayer precisava que mil especialistas em cardiologia deixassem o evento não apenas informados — mas comprometidos com a marca. Criamos uma plataforma de conteúdo e experiência que transformou cada apresentação em ativação de marca, com conceito criativo desdobrável em todos os pontos de contato do evento.</p>
+          <p class="case-desc" data-lang="en">Bayer needed a thousand cardiology specialists to leave the event not just informed — but committed to the brand. We created a content and experience platform that transformed each presentation into a brand activation, with a creative concept applicable across all event touchpoints.</p>
+          <div class="case-impact" data-lang="pt">Plataforma de pertencimento ativa por 12 meses após o evento</div>
+          <div class="case-impact" data-lang="en">Belonging platform active for 12 months after the event</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-badge">Convenção</span>
+          <span class="case-badge">+1.000 pax</span>
+          <span class="case-badge" data-lang="pt">Evento + Branding</span>
+          <span class="case-badge" data-lang="en">Event + Branding</span>
+          <span class="case-badge">Digital</span>
+        </div>
+      </div>
+
+      <div class="case-item">
+        <div class="case-index"><span class="case-index-num">02</span></div>
+        <div class="case-body">
+          <div class="case-client">Havaianas · Consumer Goods</div>
+          <div class="case-title" data-lang="pt">Uma reunião de vendas global com quatro fusos horários e zero problemas</div>
+          <div class="case-title" data-lang="en">A global sales meeting across four time zones with zero issues</div>
+          <p class="case-desc" data-lang="pt">Brasil, USA, Europa e Ásia. 1.100 pessoas. Um briefing que dizia: "Precisa parecer que é um evento único, não quatro chamadas de Zoom". Desenvolvemos estúdio 3D virtual, hotsite customizado, streaming simultâneo e experiência de interatividade em tempo real — entregues num momento em que o mercado ainda aprendia o que era evento híbrido.</p>
+          <p class="case-desc" data-lang="en">Brazil, USA, Europe, and Asia. 1,100 people. A brief that said: "It needs to feel like one single event, not four Zoom calls." We developed a 3D virtual studio, custom hotsite, simultaneous streaming, and real-time interactivity experience — delivered at a moment when the market was still learning what a hybrid event was.</p>
+          <div class="case-impact" data-lang="pt">Pioneirismo em evento híbrido multipaís antes da pandemia</div>
+          <div class="case-impact" data-lang="en">Pioneering multi-country hybrid event before the pandemic</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-badge">Global</span>
+          <span class="case-badge">1.100 pax</span>
+          <span class="case-badge">Híbrido</span>
+          <span class="case-badge">4 países</span>
+        </div>
+      </div>
+
+      <div class="case-item">
+        <div class="case-index"><span class="case-index-num">03</span></div>
+        <div class="case-body">
+          <div class="case-client">iFood · Tech & Marketplace</div>
+          <div class="case-title" data-lang="pt">Levar uma cultura de alta performance para 700 pessoas em um único dia</div>
+          <div class="case-title" data-lang="en">Bringing a high-performance culture to 700 people in a single day</div>
+          <p class="case-desc" data-lang="pt">O iFood precisava de um evento comercial que fosse além da premiação de vendas e instalasse cultura. Combinamos produção de alto padrão com ativações de treinamento em entretenimento — cada momento do dia era também uma mensagem de marca interna. O resultado foi um evento que a equipe ainda referencia meses depois.</p>
+          <p class="case-desc" data-lang="en">iFood needed a commercial event that went beyond sales awards and installed culture. We combined high-standard production with entertainment training activations — every moment of the day was also an internal brand message. The result was an event the team still references months later.</p>
+          <div class="case-impact" data-lang="pt">Evento integrado com treinamento e premiação · Alta retenção de mensagem</div>
+          <div class="case-impact" data-lang="en">Integrated event with training and awards · High message retention</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-badge" data-lang="pt">Reunião Comercial</span>
+          <span class="case-badge" data-lang="en">Commercial Meeting</span>
+          <span class="case-badge">700 pax</span>
+          <span class="case-badge">Entotainment</span>
+        </div>
+      </div>
+
+      <div class="case-item">
+        <div class="case-index"><span class="case-index-num">04</span></div>
+        <div class="case-body">
+          <div class="case-client">Pfizer · Farma · Treinamento</div>
+          <div class="case-title" data-lang="pt">Como fazer uma equipe de vendas acreditar de verdade no propósito da marca</div>
+          <div class="case-title" data-lang="en">Making a sales team truly believe in the brand's purpose</div>
+          <p class="case-desc" data-lang="pt">O desafio não era fazer um evento bonito. Era fazer a equipe da Pfizer sair da convenção com um senso de pertencimento que durasse além dos quatro dias. Criamos o conceito "Be Happy, Be Pfizer" — desdobrado em todas as ativações da festa de encerramento e que perdurou na "boca do povo" da empresa por anos. Um case de como branding de evento extrapola o evento.</p>
+          <p class="case-desc" data-lang="en">The challenge wasn't making a beautiful event. It was making Pfizer's team leave the convention with a sense of belonging that lasted beyond the four days. We created the "Be Happy, Be Pfizer" concept — unfolded across all closing party activations, which lived in the company's collective memory for years. A case of how event branding transcends the event.</p>
+          <div class="case-impact" data-lang="pt">Conceito "Be Happy, Be Pfizer" adotado além do evento · Memória de marca duradoura</div>
+          <div class="case-impact" data-lang="en">"Be Happy, Be Pfizer" concept adopted beyond the event · Lasting brand memory</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-badge" data-lang="pt">Convenção</span>
+          <span class="case-badge" data-lang="en">Convention</span>
+          <span class="case-badge">Brand Concept</span>
+          <span class="case-badge" data-lang="pt">Treinamento</span>
+          <span class="case-badge" data-lang="en">Training</span>
+        </div>
+      </div>
+
+      <div class="case-item">
+        <div class="case-index"><span class="case-index-num">05</span></div>
+        <div class="case-body">
+          <div class="case-client">Boehringer Ingelheim · Farma</div>
+          <div class="case-title" data-lang="pt">Conectar 200 especialistas médicos em um congresso com autoridade científica e experiência premium</div>
+          <div class="case-title" data-lang="en">Connecting 200 medical specialists in a congress with scientific authority and premium experience</div>
+          <p class="case-desc" data-lang="pt">Um congresso de cardiologia não pode parecer um evento corporativo comum. A Boehringer Ingelheim precisava de um ambiente que elevasse a percepção científica da marca enquanto criava conexão real entre os especialistas. Combinamos produção audiovisual de estúdio 3D com plataforma digital de conteúdo e interatividade ao vivo.</p>
+          <p class="case-desc" data-lang="en">A cardiology congress cannot look like a regular corporate event. Boehringer Ingelheim needed an environment that elevated the brand's scientific perception while creating real connection between specialists. We combined 3D studio audiovisual production with a digital content platform and live interactivity.</p>
+          <div class="case-impact" data-lang="pt">Experiência científica premium · Plataforma de conteúdo pós-evento</div>
+          <div class="case-impact" data-lang="en">Premium scientific experience · Post-event content platform</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-badge" data-lang="pt">Congresso</span>
+          <span class="case-badge" data-lang="en">Congress</span>
+          <span class="case-badge">200 pax</span>
+          <span class="case-badge">3D Studio</span>
+          <span class="case-badge">Digital</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CLIENTES
+═══════════════════════════════════════════ -->
+<section class="section" id="clients">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">Quem Confia na Nexo</span>
+      <span class="kicker" data-lang="en">Who Trusts Nexo</span>
+    </div>
+    <h2 class="reveal" data-lang="pt">+70 empresas que<br><em>escolheram dormir em paz.</em></h2>
+    <h2 class="reveal" data-lang="en">+70 companies that<br><em>chose to sleep soundly.</em></h2>
+    <p class="clients-sub reveal reveal-delay-1" data-lang="pt">A maioria voltou. Não por contrato — por escolha.</p>
+    <p class="clients-sub reveal reveal-delay-1" data-lang="en">Most of them came back. Not by contract — by choice.</p>
+
+    <div class="clients-grid reveal reveal-delay-2">
+      <div class="client-cell"><div class="client-name">Bayer</div></div>
+      <div class="client-cell"><div class="client-name">Novartis</div></div>
+      <div class="client-cell"><div class="client-name">Pfizer</div></div>
+      <div class="client-cell"><div class="client-name">Boehringer Ingelheim</div></div>
+      <div class="client-cell"><div class="client-name">Organon</div></div>
+      <div class="client-cell"><div class="client-name">EMS</div></div>
+      <div class="client-cell"><div class="client-name">Havaianas</div></div>
+      <div class="client-cell"><div class="client-name">iFood</div></div>
+      <div class="client-cell"><div class="client-name">BMW</div></div>
+      <div class="client-cell"><div class="client-name">Honda</div></div>
+      <div class="client-cell"><div class="client-name">Diageo</div></div>
+      <div class="client-cell"><div class="client-name">Ultragaz</div></div>
+      <div class="client-cell"><div class="client-name">Claro</div></div>
+      <div class="client-cell"><div class="client-name">P&G</div></div>
+      <div class="client-cell"><div class="client-name">Red Hat</div></div>
+      <div class="client-cell"><div class="client-name">ASICS</div></div>
+      <div class="client-cell"><div class="client-name">B3</div></div>
+      <div class="client-cell"><div class="client-name">Drogasil</div></div>
+    </div>
+
+    <div class="testimonials reveal">
+      <div class="testimonial">
+        <div class="testimonial-quote" data-lang="pt">
+          "Se eu quero tranquilidade, eu trago a Nexo. Sei que são mais caros — porque são melhores. Coloco na mão deles e vou dormir. Sei que no outro dia abrimos a plenária com mil pessoas e nada vai dar errado."
+        </div>
+        <div class="testimonial-quote" data-lang="en">
+          "When I want peace of mind, I bring Nexo. I know they're more expensive — because they're better. I put it in their hands and go to sleep. I know the next day we open the plenary with a thousand people and nothing will go wrong."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name" data-lang="pt">Diretor de Marketing</div>
+            <div class="testimonial-name" data-lang="en">Marketing Director</div>
+            <div class="testimonial-role" data-lang="pt">Multinacional Farmacêutica · Brasil</div>
+            <div class="testimonial-role" data-lang="en">Pharmaceutical Multinational · Brazil</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-quote" data-lang="pt">
+          "A diferença da Nexo é que eles chegam sabendo o que você está sentindo. Não precisa explicar a pressão, o olhar do presidente na plateia, o que significa um imprevisto. Eles já estiveram no seu lugar."
+        </div>
+        <div class="testimonial-quote" data-lang="en">
+          "The difference with Nexo is that they arrive knowing what you're feeling. You don't have to explain the pressure, the CEO's gaze in the audience, what an unexpected problem means. They've been in your shoes."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">G</div>
+          <div>
+            <div class="testimonial-name" data-lang="pt">Gerente de Eventos Corporativos</div>
+            <div class="testimonial-name" data-lang="en">Corporate Events Manager</div>
+            <div class="testimonial-role" data-lang="pt">Empresa Consumer Goods · São Paulo</div>
+            <div class="testimonial-role" data-lang="en">Consumer Goods Company · São Paulo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTEÚDO / PONTO DE VISTA
+═══════════════════════════════════════════ -->
+<section class="section" id="content">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">Ponto de Vista</span>
+      <span class="kicker" data-lang="en">Our Perspective</span>
+    </div>
+    <h2 class="reveal" data-lang="pt">O que pensamos<br>sobre o que <em>fazemos.</em></h2>
+    <h2 class="reveal" data-lang="en">What we think<br>about what <em>we do.</em></h2>
+    <p class="content-sub reveal reveal-delay-1" data-lang="pt">Mais de 18 anos acumulando uma visão do mundo corporativo que poucas agências têm. Aqui compartilhamos o que vemos — sem filtro de fornecedor.</p>
+    <p class="content-sub reveal reveal-delay-1" data-lang="en">Over 18 years accumulating a view of the corporate world that few agencies have. Here we share what we see — without a supplier filter.</p>
+
+    <div class="articles-grid reveal reveal-delay-2">
+      <div class="article-card featured">
+        <div>
+          <div class="article-tag" data-lang="pt">Manifesto · Posicionamento</div>
+          <div class="article-tag" data-lang="en">Manifesto · Positioning</div>
+          <div class="article-title" data-lang="pt">Evento não é fim. É plataforma. E isso muda tudo.</div>
+          <div class="article-title" data-lang="en">Events aren't the end. They're the platform. And that changes everything.</div>
+          <p class="article-excerpt" data-lang="pt">A maioria das empresas contrata um evento. A Nexo entrega uma plataforma de marca. A diferença não está na produção — está na pergunta que fazemos no briefing: "Qual reputação você quer construir?" Quando essa pergunta muda, tudo o que vem depois também muda.</p>
+          <p class="article-excerpt" data-lang="en">Most companies hire an event. Nexo delivers a brand platform. The difference isn't in the production — it's in the question we ask in the briefing: "What reputation do you want to build?" When that question changes, everything that follows changes too.</p>
+        </div>
+        <div class="article-footer">
+          <span class="article-author">Fábio Porcel & Melina Konstadinidis</span>
+          <span class="article-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <div class="article-tag" data-lang="pt">Método · Stress Free</div>
+          <div class="article-tag" data-lang="en">Method · Stress Free</div>
+          <div class="article-title" data-lang="pt">O que significa "menos follow, mais update" na prática</div>
+          <div class="article-title" data-lang="en">What "less follow, more update" actually means in practice</div>
+          <p class="article-excerpt" data-lang="pt">Por que você nunca deveria precisar cobrar atualização do seu parceiro de evento — e como montamos nosso processo para que isso nunca aconteça.</p>
+          <p class="article-excerpt" data-lang="en">Why you should never need to chase updates from your event partner — and how we built our process so that never happens.</p>
+        </div>
+        <div class="article-footer">
+          <span class="article-author">Fábio Porcel</span>
+          <span class="article-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <div class="article-tag" data-lang="pt">Visão · Nexalismo</div>
+          <div class="article-tag" data-lang="en">Vision · Nexalism</div>
+          <div class="article-title" data-lang="pt">O que é ser Nexalista: ver o todo onde outros veem partes</div>
+          <div class="article-title" data-lang="en">What it means to be Nexalist: seeing the whole where others see parts</div>
+          <p class="article-excerpt" data-lang="pt">Um médico que só olha para o dente não encontra que a dor vem da coluna. Um parceiro que só pensa em evento não vai ver que o problema é de cultura.</p>
+          <p class="article-excerpt" data-lang="en">A doctor who only looks at the tooth doesn't find that the pain comes from the spine. A partner who only thinks about the event won't see that the problem is culture.</p>
+        </div>
+        <div class="article-footer">
+          <span class="article-author">Melina Konstadinidis</span>
+          <span class="article-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTATO
+═══════════════════════════════════════════ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="kicker" data-lang="pt">Vamos Conversar</span>
+      <span class="kicker" data-lang="en">Let's Talk</span>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 data-lang="pt">Você foca<br>na estratégia.<br>A gente cuida<br><em>do resto.</em></h2>
+        <h2 data-lang="en">You focus<br>on strategy.<br>We handle<br><em>the rest.</em></h2>
+        <p class="contact-promise" data-lang="pt">
+          Não fazemos pitches genéricos. Antes de qualquer proposta, queremos entender o seu desafio real — não o briefing, mas o contexto. <strong>Uma conversa de 30 minutos costuma valer mais do que semanas de troca de e-mail.</strong>
+        </p>
+        <p class="contact-promise" data-lang="en">
+          We don't do generic pitches. Before any proposal, we want to understand your real challenge — not the brief, but the context. <strong>A 30-minute conversation is usually worth more than weeks of email exchanges.</strong>
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="contact-info-label" data-lang="pt">E-mail</span>
+            <span class="contact-info-label" data-lang="en">Email</span>
+            <span class="contact-info-value"><a href="mailto:contato@gruponexo.com.br">contato@gruponexo.com.br</a></span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label" data-lang="pt">Operação Brasil</span>
+            <span class="contact-info-label" data-lang="en">Brazil Operations</span>
+            <span class="contact-info-value">São Paulo, SP</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label" data-lang="pt">Operação USA</span>
+            <span class="contact-info-label" data-lang="en">US Operations</span>
+            <span class="contact-info-value">Orlando, FL</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Instagram</span>
+            <span class="contact-info-value"><a href="https://instagram.com/gruponexo.oficial" target="_blank">@gruponexo.oficial</a></span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">LinkedIn</span>
+            <span class="contact-info-value"><a href="https://linkedin.com/company/grupo-nexo" target="_blank">Grupo Nexo</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang="pt">Seu nome</label>
+              <label data-lang="en">Your name</label>
+              <input type="text" placeholder="Nome completo" data-placeholder-pt="Nome completo" data-placeholder-en="Full name">
+            </div>
+            <div class="form-group">
+              <label data-lang="pt">Empresa</label>
+              <label data-lang="en">Company</label>
+              <input type="text" placeholder="Nome da empresa" data-placeholder-pt="Nome da empresa" data-placeholder-en="Company name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-lang="pt">E-mail corporativo</label>
+            <label data-lang="en">Corporate email</label>
+            <input type="email" placeholder="seu@empresa.com">
+          </div>
+          <div class="form-group">
+            <label data-lang="pt">Qual é o seu desafio?</label>
+            <label data-lang="en">What's your challenge?</label>
+            <select>
+              <option value="" data-lang="pt">Selecione uma frente</option>
+              <option value="" data-lang="en">Select a focus area</option>
+              <option value="events" data-lang="pt">Evento Corporativo (convenção, congresso, lançamento)</option>
+              <option value="events" data-lang="en">Corporate Event (convention, congress, launch)</option>
+              <option value="training" data-lang="pt">Treinamento & Desenvolvimento de Liderança</option>
+              <option value="training" data-lang="en">Training & Leadership Development</option>
+              <option value="branding" data-lang="pt">Branding & Comunicação Integrada</option>
+              <option value="branding" data-lang="en">Branding & Integrated Communication</option>
+              <option value="international" data-lang="pt">Operação Internacional</option>
+              <option value="international" data-lang="en">International Operations</option>
+              <option value="other" data-lang="pt">Outros / Não sei ainda</option>
+              <option value="other" data-lang="en">Other / Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-lang="pt">Conte mais sobre o contexto</label>
+            <label data-lang="en">Tell us more about the context</label>
+            <textarea placeholder="O que você está tentando resolver? Qual é o contexto do projeto?" data-placeholder-pt="O que você está tentando resolver? Qual é o contexto do projeto?" data-placeholder-en="What are you trying to solve? What's the project context?"></textarea>
+          </div>
+          <div class="form-submit">
+            <span class="form-note" data-lang="pt">Respondemos em até 24h úteis.</span>
+            <span class="form-note" data-lang="en">We respond within 24 business hours.</span>
+            <button type="button" class="btn-primary" onclick="submitForm()" data-lang="pt">Enviar →</button>
+            <button type="button" class="btn-primary" onclick="submitForm()" data-lang="en">Send →</button>
+          </div>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <p data-lang="pt">✓ Mensagem recebida. Entraremos em contato em breve.</p>
+          <p data-lang="en">✓ Message received. We'll be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top container" style="padding-top: 0;">
+    <div class="footer-brand">
+      <div class="footer-logo-name">Grupo Nexo</div>
+      <p class="footer-tagline" data-lang="pt">Excelência não é barulho. É condução. Parceiro executivo em eventos, treinamento e comunicação — Brasil & USA.</p>
+      <p class="footer-tagline" data-lang="en">Excellence isn't noise. It's execution. Executive partner in events, training, and communication — Brazil & USA.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/gruponexo.oficial" target="_blank">Instagram</a>
+        <a href="https://linkedin.com/company/grupo-nexo" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-lang="pt">Navegação</h4>
+      <h4 data-lang="en">Navigation</h4>
+      <ul>
+        <li><a href="#about" data-lang="pt">Nossa História</a><a href="#about" data-lang="en">Our Story</a></li>
+        <li><a href="#method" data-lang="pt">O Método</a><a href="#method" data-lang="en">The Method</a></li>
+        <li><a href="#ecosystem" data-lang="pt">Ecossistema</a><a href="#ecosystem" data-lang="en">Ecosystem</a></li>
+        <li><a href="#cases" data-lang="pt">Casos de Impacto</a><a href="#cases" data-lang="en">Impact Cases</a></li>
+        <li><a href="#content" data-lang="pt">Ponto de Vista</a><a href="#content" data-lang="en">Insights</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-lang="pt">Capacidades</h4>
+      <h4 data-lang="en">Capabilities</h4>
+      <ul>
+        <li><a href="#ecosystem" data-lang="pt">Branding & Comunicação</a><a href="#ecosystem" data-lang="en">Branding & Communication</a></li>
+        <li><a href="#ecosystem" data-lang="pt">Eventos Corporativos</a><a href="#ecosystem" data-lang="en">Corporate Events</a></li>
+        <li><a href="#ecosystem" data-lang="pt">Treinamento com Entretenimento</a><a href="#ecosystem" data-lang="en">Training with Entertainment</a></li>
+        <li><a href="#ecosystem" data-lang="pt">Operação Internacional</a><a href="#ecosystem" data-lang="en">International Operations</a></li>
+        <li><a href="#ecosystem" data-lang="pt">Logística Corporativa</a><a href="#ecosystem" data-lang="en">Corporate Logistics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-lang="pt">Contato</h4>
+      <h4 data-lang="en">Contact</h4>
+      <ul>
+        <li><a href="mailto:contato@gruponexo.com.br">contato@gruponexo.com.br</a></li>
+        <li><a data-lang="pt">São Paulo · Brasil</a><a data-lang="en">São Paulo · Brazil</a></li>
+        <li><a>Orlando · USA</a></li>
+        <li><a href="https://instagram.com/porcel.oficial" target="_blank">@porcel.oficial</a></li>
+        <li><a href="https://instagram.com/melkonsta.oficial" target="_blank">@melkonsta.oficial</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom container" style="padding-top: 32px;">
+    <span class="footer-copy" data-lang="pt">© 2026 Grupo Nexo. Todos os direitos reservados.</span>
+    <span class="footer-copy" data-lang="en">© 2026 Grupo Nexo. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#" data-lang="pt">Privacidade</a>
+      <a href="#" data-lang="en">Privacy</a>
+      <a href="#" data-lang="pt">Termos</a>
+      <a href="#" data-lang="en">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script>
+/* ── LANG ── */
+function setLang(lang) {
+  document.body.classList.toggle('lang-en', lang === 'en');
+  document.getElementById('btnPT').classList.toggle('active', lang === 'pt');
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+  localStorage.setItem('nexo-lang', lang);
+
+  // Update placeholders
+  document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
+    el.placeholder = el.getAttribute('data-placeholder-' + lang);
+  });
+}
+
+// Restore saved lang
+const savedLang = localStorage.getItem('nexo-lang');
+if (savedLang === 'en') setLang('en');
+
+/* ── NAV SCROLL ── */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+/* ── MOBILE MENU ── */
+function toggleMobile() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── REVEAL ON SCROLL ── */
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => revealObs.observe(el));
+
+/* ── FORM SUBMIT (stub) ── */
+function submitForm() {
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+/* ── ACTIVE NAV LINKS ── */
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--white)'
+      : '';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
